@@ -5,6 +5,8 @@ import snake from "./snake.js"
 
 class Food {
     constructor() {
+        this.col
+        this.row
         this.generatePosition()
     }
 

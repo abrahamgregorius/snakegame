@@ -5,13 +5,14 @@ import food from './food.js'
 
 let keyActive 
 const update = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     board.draw()
     food.draw()
     snake.draw()
 }
 
 update()
-setInterval(() => {
+const animate = setInterval(() => {
     if(keyActive == 'ArrowDown' && snake.dy !== -1){
         snake.dx = 0
         snake.dy = 1
@@ -28,9 +29,26 @@ setInterval(() => {
         snake.dx = 0
         snake.dy = -1
     }
+    snake.move(food)
+    
+    let isHit = false
+    
+    snake.positions.forEach((position, index) => {
+        if(index == 0) return
+        if(snake.positions[0].row == position.row && snake.positions[0].col == position.col){
+            isHit = true
+        }
+    })
+
+    if(snake.positions[0].row < 0 || snake.positions[0].row > (board.row - 1) || snake.positions[0].col < 0 || snake.positions[0].col > (board.col - 1) || isHit == true){
+        clearInterval(animate)
+        return
+    }
 
 
-    snake.move()
+
+
+
     update()
 }, 250)
 
