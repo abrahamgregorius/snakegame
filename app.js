@@ -1,3 +1,12 @@
-board.draw()
-snake.draw()
-food.draw()
+
+const update = () => {
+    board.draw()
+    snake.draw()
+}
+
+update()
+
+setInterval(() => {
+    snake.move()
+    update()
+}, 500)
