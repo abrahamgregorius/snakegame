@@ -1,3 +1,5 @@
+import { canvas, ctx } from "./canvas.js"
+
 class Board {
     constructor() {
         this.row = 20
@@ -31,3 +33,4 @@ class Board {
 }
 
 const board = new Board()
+export default board

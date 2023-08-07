@@ -1,3 +1,6 @@
+import { canvas, ctx } from "./canvas.js"
+import board from "./board.js"
+
 class Snake {
     constructor() {
         this.positions = [ // Array ini berisi posisi snake (initial)
@@ -34,15 +37,19 @@ class Snake {
                     row: this.positions[i].row + this.dy,
                     col: this.positions[i].col + this.dx
                 }
+
+                // if(this.positions[i].row === )
             }
             else {
                 this.positions[i] = this.positions[i - 1]
             }
         }
 
-        
+
     }
 
 }
 
 const snake = new Snake()
+
+export default snake

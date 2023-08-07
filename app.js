@@ -1,3 +1,8 @@
+import { canvas, ctx } from './canvas.js'
+import board from './board.js'
+import snake from './snake.js'
+import food from './food.js'
+
 let keyActive 
 const update = () => {
     board.draw()

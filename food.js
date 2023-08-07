@@ -1,3 +1,8 @@
+import { ctx } from "./canvas.js"
+import board from "./board.js"
+import snake from "./snake.js"
+
+
 class Food {
     constructor() {
         this.generatePosition()
@@ -24,3 +29,5 @@ class Food {
 }
 
 const food = new Food()
+
+export default food
